@@ -1,5 +1,8 @@
 pipeline{
-    node("node1"){
+    agent {
+        node {
+            label 'node1'
+        }
     stages{
         stage("Clone the repo"){
             steps{
