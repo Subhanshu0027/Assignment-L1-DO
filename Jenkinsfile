@@ -1,9 +1,5 @@
 pipeline{
-    agent {
-        node {
-            label 'node1'
-        }
-    }
+    node("node1"){
     stages{
         stage("Clone the repo"){
             steps{
@@ -39,4 +35,5 @@ pipeline{
 
     }
     
+}
 }
