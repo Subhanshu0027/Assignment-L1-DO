@@ -10,15 +10,12 @@ pipeline {
         }
         stage("Navigate to the docker file") {
             steps {
-                sh 'cd Assignment-L1-DO/aesthisia-demo'
+                dir('Assignment-L1-DO/aesthisia-demo') {
+                    sh 'docker build -t subhanshu0027/myreactapp:latest .'
+                }
             }
         }
-        stage("Build the docker file") {
-            steps {
-                sh 'docker build -t subhanshu0027/myreactapp:latest .'
-            }
-        }
-        stage("login to Dockerhub") {
+        stage("Login to Dockerhub") {
             steps {
                 sh 'docker login -u subhanshu0027 -p subhanshu0027@@docker'
             }
