@@ -1,5 +1,8 @@
 pipeline{
-    node("node1")
+    agent {
+        node {
+            label 'node1'
+        }
     environment{
         DOCKER_REGISTRY = "subhanshu0027"
         IMAGE_NAME = "my_react_app"
