@@ -5,7 +5,13 @@ pipeline {
     stages {
         stage("Clone the repo") {
             steps {
-                sh 'git clone https://github.com/Subhanshu0027/Assignment-L1-DO.git'
+                script {
+                    if (!fileExists('Assignment-L1-DO')) {
+                        sh 'git clone https://github.com/Subhanshu0027/Assignment-L1-DO.git'
+                    } else {
+                        echo 'Directory already exists, skipping cloning step.'
+                    }
+                }
             }
         }
         stage("Navigate to the docker file") {
