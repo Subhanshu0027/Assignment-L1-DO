@@ -33,7 +33,7 @@ pipeline {
         }
         stage("Run container from Docker image") {
             steps {
-                sh 'docker run -d --name my-container subhanshu0027/myreactapp:latest'
+                sh 'docker run -d -p 3000:3000 --name my-container subhanshu0027/myreactapp:latest '
             }
         }
     }
