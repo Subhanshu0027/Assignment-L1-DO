@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'node1'
+        label 'docker-agent'
     }
     stages {
         stage("Clone the repo") {
